@@ -127,52 +127,8 @@ class LoginViewController: UIViewController {
         var usrEntered = emailIdLabel.text
         var pwdEntered = passWordIdLabel.text
         
-        if usrEntered != "" && pwdEntered != "" {
-            // If not empty then yay, do something
-            
-            PFUser.logInWithUsername(inBackground: emailIdLabel.text!, password:passWordIdLabel.text!) {
-                user, error in
-                if user != nil {
-                    let alertController = UIAlertController(title: "WELCOME", message: "User logged in.", preferredStyle: .alert)
-                    
-                    
-                    let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
-                        // handle cancel response here. Doing nothing will dismiss the view.
-                    }
-                    // add the cancel action to the alertController
-                    alertController.addAction(cancelAction)
-                    
-                    
-                    self.present(alertController, animated: true) {
-                        // optional code for what happens after the alert controller has finished presenting
-                    }
-
-                    
-                    
-                    // Yes, User Exists
-                    
-                } else {
-                    let alertController = UIAlertController(title: "ERROR", message: "Invalid username or password.", preferredStyle: .alert)
-                    
-                    
-                    let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
-                        // handle cancel response here. Doing nothing will dismiss the view.
-                    }
-                    // add the cancel action to the alertController
-                    alertController.addAction(cancelAction)
-                    
-                    
-                    self.present(alertController, animated: true) {
-                        // optional code for what happens after the alert controller has finished presenting
-                    }
-                    
-
-                    // No, User Doesn't Exist
-                }
-            }
-            
-            
-        } else {
+        
+        func justHod(){
             let alertController = UIAlertController(title: "ERROR", message: "Empty Values", preferredStyle: .alert)
             
             
@@ -186,8 +142,43 @@ class LoginViewController: UIViewController {
             self.present(alertController, animated: true) {
                 // optional code for what happens after the alert controller has finished presenting
             }
-
             
+
+        }
+        if usrEntered != "" && pwdEntered != "" {
+            // If not empty then yay, do something
+            
+            PFUser.logInWithUsername(inBackground: emailIdLabel.text!, password:passWordIdLabel.text!) {
+                user, error in
+                if user != nil {
+                    print("Sign In")
+                                       
+                    // Yes, User Exists
+                    
+                } else {
+                    let alertController = UIAlertController(title: "ERROR", message: "INVALID VALUES", preferredStyle: .alert)
+                    
+                    
+                    let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                        // handle cancel response here. Doing nothing will dismiss the view.
+                    }
+                    // add the cancel action to the alertController
+                    alertController.addAction(cancelAction)
+                    
+                    
+                    self.present(alertController, animated: true) {
+                        // optional code for what happens after the alert controller has finished presenting
+                    }
+
+                    
+
+                    // No, User Doesn't Exist
+                }
+            }
+            
+            
+        } else {
+            justHod()
         }
         
         
@@ -198,14 +189,20 @@ class LoginViewController: UIViewController {
     
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let detailViewController = segue.destination as! ChatViewController
+        var userEmail = emailIdLabel.text
+        print("Value inside segue is : ", emailIdLabel.text as String!)
+        detailViewController.userID = emailIdLabel.text as String!
     }
-    */
+ 
+    
 
 }
