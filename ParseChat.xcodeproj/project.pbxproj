@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		F05C0EF150C53FBFD6B433F0 /* Pods_ParseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5402D3E6C2A63A0F871D600 /* Pods_ParseChat.framework */; };
 		FEB7168D1E60DBFE00F9A3C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7168C1E60DBFE00F9A3C9 /* AppDelegate.swift */; };
-		FEB7168F1E60DBFE00F9A3C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7168E1E60DBFE00F9A3C9 /* ViewController.swift */; };
 		FEB716921E60DBFE00F9A3C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEB716901E60DBFE00F9A3C9 /* Main.storyboard */; };
 		FEB716941E60DBFE00F9A3C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEB716931E60DBFE00F9A3C9 /* Assets.xcassets */; };
 		FEB716971E60DBFE00F9A3C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEB716951E60DBFE00F9A3C9 /* LaunchScreen.storyboard */; };
+		FEB7169F1E60DE1A00F9A3C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7169E1E60DE1A00F9A3C9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +21,11 @@
 		CE1F19132F7594D7A56396C1 /* Pods-ParseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChat/Pods-ParseChat.release.xcconfig"; sourceTree = "<group>"; };
 		FEB716891E60DBFE00F9A3C9 /* ParseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB7168C1E60DBFE00F9A3C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FEB7168E1E60DBFE00F9A3C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FEB716911E60DBFE00F9A3C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEB716931E60DBFE00F9A3C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEB716961E60DBFE00F9A3C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEB716981E60DBFE00F9A3C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEB7169E1E60DE1A00F9A3C9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +79,11 @@
 			isa = PBXGroup;
 			children = (
 				FEB7168C1E60DBFE00F9A3C9 /* AppDelegate.swift */,
-				FEB7168E1E60DBFE00F9A3C9 /* ViewController.swift */,
 				FEB716901E60DBFE00F9A3C9 /* Main.storyboard */,
 				FEB716931E60DBFE00F9A3C9 /* Assets.xcassets */,
 				FEB716951E60DBFE00F9A3C9 /* LaunchScreen.storyboard */,
 				FEB716981E60DBFE00F9A3C9 /* Info.plist */,
+				FEB7169E1E60DE1A00F9A3C9 /* LoginViewController.swift */,
 			);
 			path = ParseChat;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB7168F1E60DBFE00F9A3C9 /* ViewController.swift in Sources */,
+				FEB7169F1E60DE1A00F9A3C9 /* LoginViewController.swift in Sources */,
 				FEB7168D1E60DBFE00F9A3C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +374,7 @@
 				FEB7169D1E60DBFE00F9A3C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
