@@ -123,32 +123,78 @@ class LoginViewController: UIViewController {
     }
     
     
-   
-    /*
-
-    @IBAction func signUpButton(_ sender: Any) {
-        var user = PFUser()
-        user.username = emailIdLabel.text
-        user.password = passWordIdLabel.text
-        //user.email = "email@example.com"
-        // other fields can be set just like with PFObject
-        //user["phone"] = "415-392-0202"
+    @IBAction func loginButton(_ sender: Any) {
+        var usrEntered = emailIdLabel.text
+        var pwdEntered = passWordIdLabel.text
         
-        user.signUpInBackground {
-            (succeeded: Bool, error:Error?) -> Void in
-            if let error = error {
-                print(error.localizedDescription)
-                // Show the errorString somewhere and let the user try again.
-                let ac = UIAlertController(title: "Error!", message: "", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Error", style: .default, handler: nil)
-                ac.addAction(okAction)
-                self.present(ac, animated: true, completion: nil)
-            } else {
-                // Hooray! Let them use the app now.
+        if usrEntered != "" && pwdEntered != "" {
+            // If not empty then yay, do something
+            
+            PFUser.logInWithUsername(inBackground: emailIdLabel.text!, password:passWordIdLabel.text!) {
+                user, error in
+                if user != nil {
+                    let alertController = UIAlertController(title: "WELCOME", message: "User logged in.", preferredStyle: .alert)
+                    
+                    
+                    let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                        // handle cancel response here. Doing nothing will dismiss the view.
+                    }
+                    // add the cancel action to the alertController
+                    alertController.addAction(cancelAction)
+                    
+                    
+                    self.present(alertController, animated: true) {
+                        // optional code for what happens after the alert controller has finished presenting
+                    }
+
+                    
+                    
+                    // Yes, User Exists
+                    
+                } else {
+                    let alertController = UIAlertController(title: "ERROR", message: "Invalid username or password.", preferredStyle: .alert)
+                    
+                    
+                    let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                        // handle cancel response here. Doing nothing will dismiss the view.
+                    }
+                    // add the cancel action to the alertController
+                    alertController.addAction(cancelAction)
+                    
+                    
+                    self.present(alertController, animated: true) {
+                        // optional code for what happens after the alert controller has finished presenting
+                    }
+                    
+
+                    // No, User Doesn't Exist
+                }
             }
+            
+            
+        } else {
+            let alertController = UIAlertController(title: "ERROR", message: "Empty Values", preferredStyle: .alert)
+            
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                // handle cancel response here. Doing nothing will dismiss the view.
+            }
+            // add the cancel action to the alertController
+            alertController.addAction(cancelAction)
+            
+            
+            self.present(alertController, animated: true) {
+                // optional code for what happens after the alert controller has finished presenting
+            }
+
+            
         }
+        
+        
+        
+        
     }
-    */
+   
     
     
     
